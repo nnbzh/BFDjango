@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-white">
+                <div class="card-body">
+                    <form>
+                        <input type="text" class="form-control add-task" placeholder="New Task...">
+                    </form>
+                    <ul class="nav nav-pills todo-nav">
+                        <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
+                        <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a></li>
+                        <li role="presentation" class="nav-item completed-task"><a {% url 'completed_tasks' todo.id %} class="nav-link">Completed</a></li>
+                    </ul>
+                    <div class="todo-list">
+                        {% for item in tasks %}
+                        <div class="todo-item">
+                            <div class="checker">
+                                <span class=""><input type="checkbox" {% if item.mark == True %} checked {% endif %}></span>
+                            </div>
+                            <span>{{ item.name }}</span>
+                        </div>
+                        {% endfor%}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

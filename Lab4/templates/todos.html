@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-white">
+                <div class="card-body">
+                    <div class="todo-list">
+                        {% for item in todos %}
+                        <div class="todo-item">
+                            <span><a href={% url 'todo_tasks' todo_id = item.id %}>{{ item.name }}</a></span>
+                        </div>
+                        {% endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
