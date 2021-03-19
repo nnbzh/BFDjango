@@ -14,10 +14,7 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
 
 
-class TasksSerializer(serializers.ModelSerializer):
-    todo_id = serializers.IntegerField(read_only=False)
-    owner_id = serializers.IntegerField(read_only=False)
-
+class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ('id', 'task', 'due_date', 'owner', 'created_at', 'is_done')
+        fields = ('__all__')
