@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="equal-width-cols">
+    <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Created</th>
+        <th scope="col">Due on</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Mark</th>
+
+    </tr>
+
+    {% for item in tasks %}
+        <tr>
+            <td>{{ item.task }}</td>
+            <td>{{ item.created }}</td>
+            <td>{{ item.due_on }}</td>
+            <td>{{ item.owner }}</td>
+            <td>{{ item.is_done }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
